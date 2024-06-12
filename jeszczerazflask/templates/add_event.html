@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Dodaj wydarzenie</h1>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.event_type.label }}<br>
+        {{ form.event_type(size=32) }}
+    </p>
+    <p>
+        {{ form.description.label }}<br>
+        {{ form.description(rows=4, cols=32) }}
+    </p>
+    <p>
+        {{ form.date.label }}<br>
+        {{ form.date() }}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+<a href="{{ url_for('index') }}">Powrót</a>
+{% endblock %}
